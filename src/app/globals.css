@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom button styling to match the blue background with better visibility */
+.custom-primary-button {
+  @apply bg-[#1E3A8A] hover:bg-[#15307A] text-white font-medium shadow-sm;
+}
+
+.custom-primary-button:hover {
+  /* Add a semi-transparent white overlay on hover for better visibility */
+  box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.15);
+}
+
+.custom-primary-button:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+.custom-primary-button:disabled {
+  @apply opacity-70 cursor-not-allowed;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.1);
+}
+
+.custom-outline-button {
+  @apply bg-white border-[#1E3A8A] text-[#1E3A8A] hover:bg-[#F0F4FF] font-medium shadow-sm;
+}
+
+.custom-outline-button:hover {
+  /* Add a semi-transparent gray overlay on hover for better visibility */
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.05);
+}
+
+.custom-outline-button:focus {
+  outline: 2px solid rgba(30, 58, 138, 0.3);
+  outline-offset: 2px;
+}
+
+.custom-outline-button:disabled {
+  @apply opacity-70 cursor-not-allowed;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.05);
+}
+
+.custom-link-button {
+  @apply text-[#1E3A8A] hover:text-[#15307A] underline font-medium;
+}
+
+.custom-link-button:hover {
+  /* Add a text shadow for better visibility */
+  text-shadow: 0 0 1px rgba(30, 58, 138, 0.3);
+  @apply bg-gray-50/50 rounded;
+}
+
+.custom-link-button:focus {
+  outline: 2px solid rgba(30, 58, 138, 0.3);
+  outline-offset: 2px;
+}
+
+/* Enhanced checkbox styling */
+[data-state="checked"] {
+  @apply bg-[#1E3A8A] border-[#1E3A8A];
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+}
